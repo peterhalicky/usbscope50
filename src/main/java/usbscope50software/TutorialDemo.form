@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.5" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="title" type="java.lang.String" value="USBscope50 Tutorial Import/Export Graph Data"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowClosed" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowClosed"/>
+    <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowClosing"/>
+    <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowOpened"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jScrollPane1" alignment="0" pref="416" max="32767" attributes="0"/>
+                  <Component id="TutorialClose" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="226" max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="TutorialClose" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="tabSize" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;\tHi. &quot; + Cr + Cr +&#xd;&#xa;&quot;\t&quot; + USBscope50_Main.productID + &quot; Turorial is provided to help you &quot; + Cr +&#xd;&#xa;&quot;\tstart using and enjoying &quot; + USBscope50_Main.companyID + &quot;s USB scope quickly.&quot; + Cr + Cr +&#xd;&#xa;&quot;\tThis tutorial will show you how to import graphs &quot; + Cr + &#xd;&#xa;&quot;\tand how to get some signals moving even in Demo Mode.&quot; + Cr + Cr +&#xd;&#xa;&quot;\tThis software should have neem dostributed with 3 text files:&quot; + Cr +&#xd;&#xa;&quot;\tsin.txt, squate.txt, trian.txt.&quot; + Cr + Cr +&#xd;&#xa;&quot;\tClick on Edit Menu -&gt; Import Graph Data and select sin.txt&quot; + Cr +&#xd;&#xa;&quot;\tfile to import. You should see a sin wave displayed on the screen.&quot; + Cr + Cr +&#xd;&#xa;&quot;\tSelect tab labeled Ch1 on the screen. Move right or left&quot; + Cr +&#xd;&#xa;&quot;\tarrow buttons to change time base setting.&quot; + Cr +&#xd;&#xa;&quot;\tBy moving up or down arrows you set vots per division.&quot; + Cr +&#xd;&#xa;&quot;\tVolts per division setting is displayed on top of the graph.&quot; + Cr + Cr +&#xd;&#xa;&quot;\tEither select Run-&gt;Run menu option or click on shortcut button&quot; + Cr +&#xd;&#xa;&quot;\tRun in the toolbar. You should observe sin wave move.&quot; + Cr + Cr +&#xd;&#xa;&quot;\tHave a look at the sin.txt and its structure. To generate such a &quot; + Cr +&#xd;&#xa;&quot;\ttext file just select Edit -&gt; Export Graph Data and displayed graph&quot; + Cr +&#xd;&#xa;&quot;\tdata points will be saved in a text format.&quot; + Cr + Cr +&#xd;&#xa;&quot;\tHope you enjoy using &quot; + USBscope50_Main.productID + &quot;.&quot; + Cr + Cr + &quot;\t&quot; + USBscope50_Main.companyID" type="code"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder bevelType="1"/>
+              </Border>
+            </Property>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="jTextArea1.setCaretPosition(0);"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="TutorialClose">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CLOSE"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TutorialCloseActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
