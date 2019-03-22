@@ -25,6 +25,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import javax.swing.Timer;
@@ -857,16 +861,33 @@ public class LoadDataArray extends Thread {//implements Runnable {
         }
     }
 
-    static {
-        if (USBFamily_Main.OS.equalsIgnoreCase("Linux")) {
-            System.load("/usr/lib/" + USBscope50_Main.productID + "Drvr.so");
-        } else if (USBFamily_Main.OS.equalsIgnoreCase("Windows")) {
-            try {
-                System.load(System.getenv("ProgramFiles") + "/" + USBscope50_Main.companyID + "/" + USBscope50_Main.productID + " Java Software/" + USBscope50_Main.productID + "Drvr_W" + System.getProperty("sun.arch.data.model") + ".dll");
-            } catch (UnsatisfiedLinkError err) {
-                USBscope50_Main.abort = 10;
-                err.getMessage();
+    public static void loadJarLibrary(String name) throws IOException {
+        try (InputStream in = ClassLoader.getSystemResourceAsStream(name)) {
+            if (in==null)
+                throw new IOException("Can't find "+name+" resource");
+            File temp = File.createTempFile(name, "");
+
+            try (FileOutputStream fos = new FileOutputStream(temp)) {
+                byte[] buffer = new byte[10240];
+                int read;
+                while ((read = in.read(buffer)) != -1) {
+                    fos.write(buffer, 0, read);
+                }
             }
+            System.load(temp.getAbsolutePath());
+        }
+    }
+
+    static {
+        try {
+            if (USBFamily_Main.OS.equalsIgnoreCase("Linux")) {
+                loadJarLibrary(USBscope50_Main.productID + "Drvr.so");
+            } else if (USBFamily_Main.OS.equalsIgnoreCase("Windows")) {
+                loadJarLibrary(USBscope50_Main.productID + "Drvr_W" + System.getProperty("sun.arch.data.model") + ".dll");
+            }
+        } catch (UnsatisfiedLinkError | IOException err) {
+            USBscope50_Main.abort = 10;
+            err.getMessage();
         }
     }
 
