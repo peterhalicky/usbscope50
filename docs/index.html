@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)./index.html#comments -->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="viewport" content="width=device-width">
+	<title>USBscope50 on Windows 7 64bit and Java 7 | phjr's web site</title>
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<!--[if lt IE 9]>
+	<script src="https://peto.halicky.sk/wp-content/themes/twentyfourteen/js/html5.js?ver=3.7.0"></script>
+	<![endif]-->
+	<meta name="robots" content="max-image-preview:large">
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+	<link rel="dns-prefetch" href="https://s.w.org/">
+	<link href="https://fonts.gstatic.com/" crossorigin="" rel="preconnect">
+	<script>
+		window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/peto.halicky.sk\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.2" } };
+		!function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode; p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([10084, 65039, 8205, 55357, 56613], [10084, 65039, 8203, 55357, 56613]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))) }(window, document, window._wpemojiSettings);
+	</script>
+	<script src="./files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+	<style>
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<link rel="stylesheet" id="dashicons-css" href="./files/dashicons.min.css" media="all">
+	<link rel="stylesheet" id="admin-bar-css" href="./files/admin-bar.min.css" media="all">
+	<link rel="stylesheet" id="wp-block-library-css" href="./files/style.min.css" media="all">
+	<link rel="stylesheet" href="style.css">
+	<style id="wp-block-library-theme-inline-css">
+		#start-resizable-editor-section {
+			display: none
+		}
+
+		.wp-block-audio figcaption {
+			color: #555;
+			font-size: 13px;
+			text-align: center
+		}
+
+		.is-dark-theme .wp-block-audio figcaption {
+			color: hsla(0, 0%, 100%, .65)
+		}
+
+		.wp-block-code {
+			font-family: Menlo, Consolas, monaco, monospace;
+			color: #1e1e1e;
+			padding: .8em 1em;
+			border: 1px solid #ddd;
+			border-radius: 4px
+		}
+
+		.wp-block-embed figcaption {
+			color: #555;
+			font-size: 13px;
+			text-align: center
+		}
+
+		.is-dark-theme .wp-block-embed figcaption {
+			color: hsla(0, 0%, 100%, .65)
+		}
+
+		.blocks-gallery-caption {
+			color: #555;
+			font-size: 13px;
+			text-align: center
+		}
+
+		.is-dark-theme .blocks-gallery-caption {
+			color: hsla(0, 0%, 100%, .65)
+		}
+
+		.wp-block-image figcaption {
+			color: #555;
+			font-size: 13px;
+			text-align: center
+		}
+
+		.is-dark-theme .wp-block-image figcaption {
+			color: hsla(0, 0%, 100%, .65)
+		}
+
+		.wp-block-pullquote {
+			border-top: 4px solid;
+			border-bottom: 4px solid;
+			margin-bottom: 1.75em;
+			color: currentColor
+		}
+
+		.wp-block-pullquote__citation,
+		.wp-block-pullquote cite,
+		.wp-block-pullquote footer {
+			color: currentColor;
+			text-transform: uppercase;
+			font-size: .8125em;
+			font-style: normal
+		}
+
+		.wp-block-quote {
+			border-left: .25em solid;
+			margin: 0 0 1.75em;
+			padding-left: 1em
+		}
+
+		.wp-block-quote cite,
+		.wp-block-quote footer {
+			color: currentColor;
+			font-size: .8125em;
+			position: relative;
+			font-style: normal
+		}
+
+		.wp-block-quote.has-text-align-right {
+			border-left: none;
+			border-right: .25em solid;
+			padding-left: 0;
+			padding-right: 1em
+		}
+
+		.wp-block-quote.has-text-align-center {
+			border: none;
+			padding-left: 0
+		}
+
+		.wp-block-quote.is-large,
+		.wp-block-quote.is-style-large {
+			border: none
+		}
+
+		.wp-block-search .wp-block-search__label {
+			font-weight: 700
+		}
+
+		.wp-block-group.has-background {
+			padding: 1.25em 2.375em;
+			margin-top: 0;
+			margin-bottom: 0
+		}
+
+		.wp-block-separator {
+			border: none;
+			border-bottom: 2px solid;
+			margin-left: auto;
+			margin-right: auto;
+			opacity: .4
+		}
+
+		.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+			width: 100px
+		}
+
+		.wp-block-separator.has-background:not(.is-style-dots) {
+			border-bottom: none;
+			height: 1px
+		}
+
+		.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
+			height: 2px
+		}
+
+		.wp-block-table thead {
+			border-bottom: 3px solid
+		}
+
+		.wp-block-table tfoot {
+			border-top: 3px solid
+		}
+
+		.wp-block-table td,
+		.wp-block-table th {
+			padding: .5em;
+			border: 1px solid;
+			word-break: normal
+		}
+
+		.wp-block-table figcaption {
+			color: #555;
+			font-size: 13px;
+			text-align: center
+		}
+
+		.is-dark-theme .wp-block-table figcaption {
+			color: hsla(0, 0%, 100%, .65)
+		}
+
+		.wp-block-video figcaption {
+			color: #555;
+			font-size: 13px;
+			text-align: center
+		}
+
+		.is-dark-theme .wp-block-video figcaption {
+			color: hsla(0, 0%, 100%, .65)
+		}
+
+		.wp-block-template-part.has-background {
+			padding: 1.25em 2.375em;
+			margin-top: 0;
+			margin-bottom: 0
+		}
+
+		#end-resizable-editor-section {
+			display: none
+		}
+	</style>
+	<link rel="stylesheet" id="wordfenceAJAXcss-css" href="./files/wordfenceBox.1637598990.css" media="all">
+	<link rel="stylesheet" id="wp-mail-smtp-admin-bar-css" href="./files/admin-bar.min(1).css" media="all">
+	<link rel="stylesheet" id="twentyfourteen-lato-css" href="./files/css" media="all">
+	<link rel="stylesheet" id="genericons-css" href="./files/genericons.css" media="all">
+	<link rel="stylesheet" id="twentyfourteen-style-css" href="./files/style.css" media="all">
+	<link rel="stylesheet" id="twentyfourteen-block-style-css" href="./files/blocks.css" media="all">
+	<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://peto.halicky.sk/wp-content/themes/twentyfourteen/css/ie.css?ver=20140701' media='all' />
+<![endif]-->
+	<link rel="stylesheet" id="nextgen_widgets_style-css" href="./files/widgets.css" media="all">
+	<link rel="stylesheet" id="nextgen_basic_thumbnails_style-css" href="./files/nextgen_basic_thumbnails.css"
+		media="all">
+	<link rel="stylesheet" id="nextgen_basic_slideshow_style-css" href="./files/ngg_basic_slideshow.css" media="all">
+	<script id="wfi18njs-js-extra">
+		var WordfenceI18nStrings = { "${totalIPs} addresses in this network": "${totalIPs} addresses in this network", "%s in POST body: %s": "%s in POST body: %s", "%s in cookie: %s": "%s in cookie: %s", "%s in file: %s": "%s in file: %s", "%s in query string: %s": "%s in query string: %s", "%s is not valid hostname": "%s is not valid hostname", ".htaccess Updated": ".htaccess Updated", ".htaccess change": ".htaccess change", "404 Not Found": "404 Not Found", "Activity Log Sent": "Activity Log Sent", "Add action to allowlist": "Add action to allowlist", "Add code to .htaccess": "Add code to .htaccess", "All Hits": "All Hits", "All capabilties of admin user %s were successfully revoked.": "All capabilties of admin user %s were successfully revoked.", "An error occurred": "An error occurred", "An error occurred when adding the request to the allowlist.": "An error occurred when adding the request to the allowlist.", "Are you sure you want to allowlist this action?": "Are you sure you want to allowlist this action?", "Authentication Code": "Authentication Code", "Background Request Blocked": "Background Request Blocked", "Block This Network": "Block This Network", "Blocked": "Blocked", "Blocked By Firewall": "Blocked By Firewall", "Blocked WAF": "Blocked WAF", "Blocked by Wordfence": "Blocked by Wordfence", "Blocked by Wordfence plugin settings": "Blocked by Wordfence plugin settings", "Blocked by the Wordfence Application Firewall and plugin settings": "Blocked by the Wordfence Application Firewall and plugin settings", "Blocked by the Wordfence Security Network": "Blocked by the Wordfence Security Network", "Blocked by the Wordfence Web Application Firewall": "Blocked by the Wordfence Web Application Firewall", "Bot": "Bot", "Cancel Changes": "Cancel Changes", "Cellphone Sign-In Recovery Codes": "Cellphone Sign-In Recovery Codes", "Cellphone Sign-in activated for user.": "Cellphone Sign-in activated for user.", "Click here to download a backup copy of this file now": "Click here to download a backup copy of this file now", "Click here to download a backup copy of your .htaccess file now": "Click here to download a backup copy of your .htaccess file now", "Click to fix .htaccess": "Click to fix .htaccess", "Close": "Close", "Crawlers": "Crawlers", "Diagnostic report has been sent successfully.": "Diagnostic report has been sent successfully.", "Directory Listing Disabled": "Directory Listing Disabled", "Directory listing has been disabled on your server.": "Directory listing has been disabled on your server.", "Disabled": "Disabled", "Dismiss": "Dismiss", "Don't ask again": "Don't ask again", "Download": "Download", "Download Backup File": "Download Backup File", "Each line of 16 letters and numbers is a single recovery code, with optional spaces for readability. When typing your password, enter \"wf\" followed by the entire code like \"mypassword wf1234 5678 90AB CDEF\". If your site shows a separate prompt for entering a code after entering only your username and password, enter only the code like \"1234 5678 90AB CDEF\". Your recovery codes are:": "Each line of 16 letters and numbers is a single recovery code, with optional spaces for readability. When typing your password, enter \"wf\" followed by the entire code like \"mypassword wf1234 5678 90AB CDEF\". If your site shows a separate prompt for entering a code after entering only your username and password, enter only the code like \"1234 5678 90AB CDEF\". Your recovery codes are:", "Email Diagnostic Report": "Email Diagnostic Report", "Email Wordfence Activity Log": "Email Wordfence Activity Log", "Enter a valid IP or domain": "Enter a valid IP or domain", "Enter the email address you would like to send the Wordfence activity log to. Note that the activity log may contain thousands of lines of data. This log is usually only sent to a member of the Wordfence support team. It also contains your PHP configuration from the phpinfo() function for diagnostic data.": "Enter the email address you would like to send the Wordfence activity log to. Note that the activity log may contain thousands of lines of data. This log is usually only sent to a member of the Wordfence support team. It also contains your PHP configuration from the phpinfo() function for diagnostic data.", "Error": "Error", "Error Enabling All Options Page": "Error Enabling All Options Page", "Error Restoring Defaults": "Error Restoring Defaults", "Error Saving Option": "Error Saving Option", "Error Saving Options": "Error Saving Options", "Failed Login": "Failed Login", "Failed Login: Invalid Username": "Failed Login: Invalid Username", "Failed Login: Valid Username": "Failed Login: Valid Username", "File hidden successfully": "File hidden successfully", "File restored OK": "File restored OK", "Filter Traffic": "Filter Traffic", "Firewall Response": "Firewall Response", "Full Path Disclosure": "Full Path Disclosure", "Google Bot": "Google Bot", "Google Crawlers": "Google Crawlers", "HTTP Response Code": "HTTP Response Code", "Human": "Human", "Humans": "Humans", "IP": "IP", "Key:": "Key:", "Last Updated: %s": "Last Updated: %s", "Learn more about repairing modified files.": "Learn more about repairing modified files.", "Loading...": "Loading...", "Locked Out": "Locked Out", "Locked out from logging in": "Locked out from logging in", "Logged In": "Logged In", "Logins": "Logins", "Logins and Logouts": "Logins and Logouts", "Look up IP or Domain": "Look up IP or Domain", "Manual block by administrator": "Manual block by administrator", "Next Update Check: %s": "Next Update Check: %s", "No activity to report yet. Please complete your first scan.": "No activity to report yet. Please complete your first scan.", "No issues have been ignored.": "No issues have been ignored.", "No new issues have been found.": "No new issues have been found.", "No rules were updated. Please verify you have permissions to write to the \/wp-content\/wflogs directory.": "No rules were updated. Please verify you have permissions to write to the \/wp-content\/wflogs directory.", "No rules were updated. Please verify your website can reach the Wordfence servers.": "No rules were updated. Please verify your website can reach the Wordfence servers.", "No rules were updated. Your website has reached the maximum number of rule update requests. Please try again later.": "No rules were updated. Your website has reached the maximum number of rule update requests. Please try again later.", "Note: Status will update when changes are saved": "Note: Status will update when changes are saved", "OK": "OK", "Pages Not Found": "Pages Not Found", "Paid Members Only": "Paid Members Only", "Please enter a valid IP address or domain name for your whois lookup.": "Please enter a valid IP address or domain name for your whois lookup.", "Please enter a valid email address.": "Please enter a valid email address.", "Please include your support ticket number or forum username.": "Please include your support ticket number or forum username.", "Please make a backup of this file before proceeding. If you need to restore this backup file, you can copy it to the following path from your site's root:": "Please make a backup of this file before proceeding. If you need to restore this backup file, you can copy it to the following path from your site's root:", "Please specify a reason": "Please specify a reason", "Please specify a valid IP address range in the form of \"1.2.3.4 - 1.2.3.5\" without quotes. Make sure the dash between the IP addresses in a normal dash (a minus sign on your keyboard) and not another character that looks like a dash.": "Please specify a valid IP address range in the form of \"1.2.3.4 - 1.2.3.5\" without quotes. Make sure the dash between the IP addresses in a normal dash (a minus sign on your keyboard) and not another character that looks like a dash.", "Please specify either an IP address range, Hostname or a web browser pattern to match.": "Please specify either an IP address range, Hostname or a web browser pattern to match.", "Recent Activity": "Recent Activity", "Recovery Codes": "Recovery Codes", "Redirected": "Redirected", "Redirected by Country Blocking bypass URL": "Redirected by Country Blocking bypass URL", "Referer": "Referer", "Registered Users": "Registered Users", "Restore Defaults": "Restore Defaults", "Rule Update Failed": "Rule Update Failed", "Rules Updated": "Rules Updated", "Save Changes": "Save Changes", "Scan Complete.": "Scan Complete.", "Scan the code below with your authenticator app to add this account. Some authenticator apps also allow you to type in the text version instead.": "Scan the code below with your authenticator app to add this account. Some authenticator apps also allow you to type in the text version instead.", "Security Event": "Security Event", "Send": "Send", "Sorry, but no data for that IP or domain was found.": "Sorry, but no data for that IP or domain was found.", "Specify a valid IP range": "Specify a valid IP range", "Specify a valid hostname": "Specify a valid hostname", "Specify an IP range, Hostname or Browser pattern": "Specify an IP range, Hostname or Browser pattern", "Success deleting file": "Success deleting file", "Success removing option": "Success removing option", "Success restoring file": "Success restoring file", "Success updating option": "Success updating option", "Successfully deleted admin": "Successfully deleted admin", "Successfully revoked admin": "Successfully revoked admin", "Test Email Sent": "Test Email Sent", "The 'How does Wordfence get IPs' option was successfully updated to the recommended value.": "The 'How does Wordfence get IPs' option was successfully updated to the recommended value.", "The Full Path disclosure issue has been fixed": "The Full Path disclosure issue has been fixed", "The admin user %s was successfully deleted.": "The admin user %s was successfully deleted.", "The file %s was successfully deleted.": "The file %s was successfully deleted.", "The file %s was successfully hidden from public view.": "The file %s was successfully hidden from public view.", "The file %s was successfully restored.": "The file %s was successfully restored.", "The option %s was successfully removed.": "The option %s was successfully removed.", "The request has been allowlisted. Please try it again.": "The request has been allowlisted. Please try it again.", "There was an error while sending the email.": "There was an error while sending the email.", "This will be shown only once. Keep these codes somewhere safe.": "This will be shown only once. Keep these codes somewhere safe.", "Throttled": "Throttled", "Two Factor Status": "Two Factor Status", "Type": "Type", "Type: %s": "Type: %s", "URL": "URL", "Unable to automatically hide file": "Unable to automatically hide file", "Use one of these %s codes to log in if you are unable to access your phone. Codes are 16 characters long, plus optional spaces. Each one may be used only once.": "Use one of these %s codes to log in if you are unable to access your phone. Codes are 16 characters long, plus optional spaces. Each one may be used only once.", "Use one of these %s codes to log in if you lose access to your authenticator device. Codes are 16 characters long, plus optional spaces. Each one may be used only once.": "Use one of these %s codes to log in if you lose access to your authenticator device. Codes are 16 characters long, plus optional spaces. Each one may be used only once.", "User Agent": "User Agent", "User ID": "User ID", "Username": "Username", "WHOIS LOOKUP": "WHOIS LOOKUP", "We are about to change your <em>.htaccess<\/em> file. Please make a backup of this file before proceeding.": "We are about to change your <em>.htaccess<\/em> file. Please make a backup of this file before proceeding.", "We can't modify your .htaccess file for you because: %s": "We can't modify your .htaccess file for you because: %s", "We encountered a problem": "We encountered a problem", "Wordfence Firewall blocked a background request to WordPress for the URL %s. If this occurred as a result of an intentional action, you may consider allowlisting the request to allow it in the future.": "Wordfence Firewall blocked a background request to WordPress for the URL %s. If this occurred as a result of an intentional action, you may consider allowlisting the request to allow it in the future.", "Wordfence is working...": "Wordfence is working...", "You are using Nginx as your web server. You'll need to disable autoindexing in your nginx.conf. See the <a target='_blank'  rel='noopener noreferrer' href='https:\/\/nginx.org\/en\/docs\/http\/ngx_http_autoindex_module.html'>Nginx docs for more info<\/a> on how to do this.": "You are using Nginx as your web server. You'll need to disable autoindexing in your nginx.conf. See the <a target='_blank'  rel='noopener noreferrer' href='https:\/\/nginx.org\/en\/docs\/http\/ngx_http_autoindex_module.html'>Nginx docs for more info<\/a> on how to do this.", "You are using an Nginx web server and using a FastCGI processor like PHP5-FPM. You will need to manually delete or hide those files.": "You are using an Nginx web server and using a FastCGI processor like PHP5-FPM. You will need to manually delete or hide those files.", "You are using an Nginx web server and using a FastCGI processor like PHP5-FPM. You will need to manually modify your php.ini to disable <em>display_error<\/em>": "You are using an Nginx web server and using a FastCGI processor like PHP5-FPM. You will need to manually modify your php.ini to disable <em>display_error<\/em>", "You forgot to include a reason you're blocking this IP range. We ask you to include this for your own record keeping.": "You forgot to include a reason you're blocking this IP range. We ask you to include this for your own record keeping.", "You have unsaved changes to your options. If you leave this page, those changes will be lost.": "You have unsaved changes to your options. If you leave this page, those changes will be lost.", "Your .htaccess has been updated successfully. Please verify your site is functioning normally.": "Your .htaccess has been updated successfully. Please verify your site is functioning normally.", "Your Wordfence activity log was sent to %s": "Your Wordfence activity log was sent to %s", "Your rules have been updated successfully.": "Your rules have been updated successfully.", "Your rules have been updated successfully. You are currently using the free version of Wordfence. Upgrade to Wordfence premium to have your rules updated automatically as new threats emerge. <a href=\"https:\/\/www.wordfence.com\/wafUpdateRules1\/wordfence-signup\/\">Click here to purchase a premium license<\/a>. <em>Note: Your rules will still update every 30 days as a free user.<\/em>": "Your rules have been updated successfully. You are currently using the free version of Wordfence. Upgrade to Wordfence premium to have your rules updated automatically as new threats emerge. <a href=\"https:\/\/www.wordfence.com\/wafUpdateRules1\/wordfence-signup\/\">Click here to purchase a premium license<\/a>. <em>Note: Your rules will still update every 30 days as a free user.<\/em>", "Your test email was sent to the requested email address. The result we received from the WordPress wp_mail() function was: %s<br \/><br \/>A 'True' result means WordPress thinks the mail was sent without errors. A 'False' result means that WordPress encountered an error sending your mail. Note that it's possible to get a 'True' response with an error elsewhere in your mail system that may cause emails to not be delivered.": "Your test email was sent to the requested email address. The result we received from the WordPress wp_mail() function was: %s<br \/><br \/>A 'True' result means WordPress thinks the mail was sent without errors. A 'False' result means that WordPress encountered an error sending your mail. Note that it's possible to get a 'True' response with an error elsewhere in your mail system that may cause emails to not be delivered.", "blocked by firewall": "blocked by firewall", "blocked by firewall for %s": "blocked by firewall for %s", "blocked by real-time IP blocklist": "blocked by real-time IP blocklist", "blocked by the Wordfence Security Network": "blocked by the Wordfence Security Network", "blocked for %s": "blocked for %s", "locked out from logging in": "locked out from logging in" };
+	</script>
+	<script src="./files/wfi18n.1637598990.js.download" id="wfi18njs-js"></script>
+	<script src="./files/jquery.min.js.download" id="jquery-core-js"></script>
+	<script src="./files/jquery-migrate.min.js.download" id="jquery-migrate-js"></script>
+	<script id="wordfenceAJAXjs-js-extra">
+		var WFAJAXWatcherVars = { "nonce": "a98be32e44" };
+	</script>
+	<script src="./files/admin.ajaxWatcher.1637598990.js.download" id="wordfenceAJAXjs-js"></script>
+	<link rel="https://api.w.org/" href="https://peto.halicky.sk/wp-json/">
+	<link rel="alternate" type="application/json" href="https://peto.halicky.sk/wp-json/wp/v2/posts/26">
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://peto.halicky.sk/xmlrpc.php?rsd">
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+		href="https://peto.halicky.sk/wp-includes/wlwmanifest.xml">
+	<meta name="generator" content="WordPress 5.8.2">
+	<link rel="canonical" href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/">
+	<link rel="shortlink" href="https://peto.halicky.sk/?p=26">
+	<link rel="alternate" type="application/json+oembed"
+		href="https://peto.halicky.sk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpeto.halicky.sk%2Fusbscope-on-windows-7-64bit-and-java-7%2F">
+	<link rel="alternate" type="text/xml+oembed"
+		href="https://peto.halicky.sk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpeto.halicky.sk%2Fusbscope-on-windows-7-64bit-and-java-7%2F&amp;format=xml">
+	<style>
+		.recentcomments a {
+			display: inline !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+	</style>
+	<style media="print">
+		#wpadminbar {
+			display: none;
+		}
+	</style>
+	<style media="screen">
+		html {
+			margin-top: 32px !important;
+		}
+
+		* html body {
+			margin-top: 32px !important;
+		}
+
+		@media screen and (max-width: 782px) {
+			html {
+				margin-top: 46px !important;
+			}
+
+			* html body {
+				margin-top: 46px !important;
+			}
+		}
+	</style>
+</head>
+
+<body
+	class="post-template-default single single-post postid-26 single-format-standard logged-in admin-bar wp-embed-responsive header-image full-width singular customize-support">
+	<script>
+		(function () {
+			var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?' + cs + '(\\s+|$)');
+
+			request = true;
+
+			b[c] = b[c].replace(rcs, ' ');
+			// The customizer requires postMessage and CORS (if the site is cross domain).
+			b[c] += (window.postMessage && request ? ' ' : ' no-') + cs;
+		}());
+	</script>
+
+	<div id="page" class="hfeed site">
+		<div id="site-header">
+			<a href="https://peto.halicky.sk/" rel="home">
+				<img src="./files/cropped-2013-03-16-11.18.382.jpg" width="1260" height="240" alt="phjr&#39;s web site">
+			</a>
+		</div>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="header-main">
+				<h1 class="site-title"><a href="https://peto.halicky.sk/" rel="home">phjr's web site</a></h1>
+
+				<div class="search-toggle">
+					<a href="./index.html#search-container" class="screen-reader-text" aria-expanded="false"
+						aria-controls="search-container">Search</a>
+				</div>
+
+				<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+					<button class="menu-toggle">Primary Menu</button>
+					<a class="screen-reader-text skip-link" href="./index.html#content">Skip to content</a>
+					<div id="primary-menu" class="nav-menu">
+						<ul>
+						</ul>
+					</div>
+				</nav>
+			</div>
+
+			<div id="search-container" class="search-box-wrapper hide">
+				<div class="search-box">
+					<form role="search" method="get" class="search-form" action="https://peto.halicky.sk/">
+						<label>
+							<span class="screen-reader-text">Search for:</span>
+							<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+						</label>
+						<input type="submit" class="search-submit" value="Search">
+					</form>
+				</div>
+			</div>
+		</header><!-- #masthead -->
+
+		<div id="main" class="site-main">
+
+			<div id="primary" class="content-area">
+				<div id="content" class="site-content" role="main">
+
+					<article id="post-26"
+						class="post-26 post type-post status-publish format-standard hentry category-usbscope50">
+
+						<header class="entry-header">
+							<h1 class="entry-title">USBscope50 on Windows 7 64bit and Java 7</h1>
+							<div class="entry-meta">
+								<span class="entry-date"><a
+										href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/"
+										rel="bookmark"><time class="entry-date" datetime="2013-12-27T14:34:58+01:00">27
+											December 2013</time></a></span> <span class="byline"><span
+										class="author vcard"><a class="url fn n"
+											href="#"
+											rel="author">peto</a></span></span> <span class="comments-link"><a
+										href="./index.html#comments">31 Comments</a></span>
+								<span class="edit-link"><a class="post-edit-link"
+										href="https://peto.halicky.sk/wp-admin/post.php?post=26&amp;action=edit">Edit</a></span>
+							</div><!-- .entry-meta -->
+						</header><!-- .entry-header -->
+
+						<div class="entry-content">
+							<p>I got the USBscope50 oscilloscope - but wasn't able to use it, because the software that
+								comes with the device is obsolete, does not run on Java 7 or Windows 7. I was able to
+								find the source code for the software and I was able to modify it to work on Windows 7
+								64bit and Java 7 (64bit JVM).</p>
+							<p>The following instructions are good on Windows 7 64bit. The package will not work on
+								32bit OS.</p>
+							<p>First thing you need is the correct driver for the device - you can download the package
+								here:&nbsp;<a
+									href="https://github.com/phjr/usbscope50/releases/download/1.0.0/Windows_driver.rar">Windows_driver</a>
+							</p>
+							<p>Windows will refuse to use the driver for the device, saying it's not the correct
+								device/driver combination. That's because the USB VID/PID does not match any CP210x
+								device - it is a device with a custom PID. You have to force Windows to use the driver.
+							</p>
+							<p>The software package can be downloaded here:&nbsp;<a
+									href="https://github.com/phjr/usbscope50/releases/download/1.0.0/USBscope50-Java-Software-with-JRE.zip">USBscope50
+									with JRE7 for Win7 64bit</a>.&nbsp;. Once downloaded, it MUST be unpacked
+								in&nbsp;c:\Program Files\Elan Digital Systems\, otherwise it will not work. Once
+								unpacked, just run start.bat to launch the program.</p>
+							<p>Update 21.3.2019: I have uploaded the all the sources I have <a
+									href="http://peto.halicky.sk/wp-content/uploads/2019/03/USBScope.rar">here</a>.</p>
+							<p>Update 22.3.2019: I have also shared the sources on github, I also created a pom.xml so
+								that it can be built using maven and doesn't depend on netbeans. Contributions are
+								welcome!</p>
+							<p>Update 26.12.2021: I do not want to keep my wordpress site anymore, so I'm archiving this page in read-only
+								form and I'm moving completely to <a href="https://github.com/phjr/usbscope50">github</a>.
+							</p>
+							<p><span style="color: #c0c0c0;">I spend my free time doing this, it is my hobby. If this
+									helped you and you feel like you would like to buy me a beer, you can do so by
+									clicking on the Donate button below.</span><a title="Donate"
+									href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=BAJ4AZU5ET6ZS&amp;lc=SK&amp;item_name=USBscope50%20software%20fix&amp;currency_code=EUR&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"
+									target="_blank" rel="noopener noreferrer"><img class="aligncenter"
+										src="./files/btn_donate_LG.gif" alt="Donate Button"></a></p>
+						</div><!-- .entry-content -->
+
+					</article><!-- #post-26 -->
+
+					<div id="comments" class="comments-area">
+
+
+						<h2 class="comments-title">
+							31 thoughts on “USBscope50 on Windows 7 64bit and Java 7” </h2>
+
+
+						<ol class="comment-list">
+							<li id="comment-2" class="comment even thread-even depth-1">
+								<article id="div-comment-2" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/5978e51eb249f1c5f8e47e143aabb460.png"
+												srcset="https://secure.gravatar.com/avatar/5978e51eb249f1c5f8e47e143aabb460?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">Andrej Jarosevic</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-2"><time
+													datetime="2014-01-16T08:57:27+01:00">16 January 2014 at
+													08:57</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=2">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>pf 2014</p>
+										<p>Uz dva dni bojujem s USB50 (mam ho od r. 2006) a intenzivne pouzivam.
+											Pocitace postupne inovujem ale jeden stary Compaq s WXP s nainstalovanym
+											povodnym sw pre USB50 si stale nechavam. Na novsie PC s Vistou a W7 som
+											nainstaloval novsi sw od Elanu a vsetko nadherne chodilo az po jre6.45. Len
+											co prisla jre7 osciloskopik prestal chodit a trvalo mi dost dlho, kym som
+											pochopil, ze sa treba kajucne vratit ku jre6. Moznost mat nainstalovane dve
+											verzie javy nefungovala, jre7 bolo treba poctivo odinstalovat. Predvcerom
+											som po dlhom hladani okolo sveta skoncil doma…Velmi som sa potesil a
+											okamzite stiahol a nainstaloval Vas programik na PC s W8 64. V demo mode
+											chodi ale nedokazem presvedcit windows aby nevyhlasovali ze poctivo
+											nainstalovany driver CP210x /64 je skutocne 64 bitovy. Za radu ako force
+											Windows to use the driver Vam prispejem aj na viac ako jeden beer.</p>
+										<p>So srdecnym pozdravom</p>
+										<p>Andrej Jarosevic</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=2#respond"
+											data-commentid="2" data-postid="26" data-belowelement="div-comment-2"
+											data-respondelement="respond" data-replyto="Reply to Andrej Jarosevic"
+											aria-label="Reply to Andrej Jarosevic">Reply</a></div>
+								</article><!-- .comment-body -->
+							</li><!-- #comment-## -->
+							<li id="comment-3" class="comment odd alt thread-odd thread-alt depth-1 parent">
+								<article id="div-comment-3" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/5978e51eb249f1c5f8e47e143aabb460.png"
+												srcset="https://secure.gravatar.com/avatar/5978e51eb249f1c5f8e47e143aabb460?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">Andrej Jarosevic</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-3"><time
+													datetime="2014-01-16T15:59:48+01:00">16 January 2014 at
+													15:59</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=3">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>Dakujem, uz som to konecne rozbehal, posielam cez PayPal na par piv. Nakoniec
+											som aj driver natlacil - uz som to davno nerobil a vo W8 vobec, ale spomenul
+											som si na postup. SiLabs bridge som nakoniec v zozname driverov nasiel a
+											nainstaloval. Pretoze som zatial nepotreboval rozlisovat USB 2.0 a 3.0
+											porty, chvilu mi trvalo najst na zadnom paneli PC (pod stolom) port bez
+											modreho konektoru. Mudry poradca pri problemoch ma upozornil, ze USB scope
+											50 nemusi s USB 3.0 pracovat. Takze treba ho zapojit do klasickeho USB 2.0
+											portu a je to :).<br>
+											Vas program mi ale velmi pomohol, bez neho by to asi chcelo nainstalovat
+											jre6 a mozno by bol zasa problem s novsimi javovskymi aplikaciami.</p>
+										<p>S pozdravom</p>
+										<p>Andrej Jarosevic</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=3#respond"
+											data-commentid="3" data-postid="26" data-belowelement="div-comment-3"
+											data-respondelement="respond" data-replyto="Reply to Andrej Jarosevic"
+											aria-label="Reply to Andrej Jarosevic">Reply</a></div>
+								</article><!-- .comment-body -->
+								<ol class="children">
+									<li id="comment-4"
+										class="comment byuser comment-author-peto bypostauthor even depth-2">
+										<article id="div-comment-4" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+														srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">peto</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-4"><time
+															datetime="2014-01-16T16:09:46+01:00">16 January 2014 at
+															16:09</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=4">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>Som rad ze som niekomu pomohol, dakujem aj za tych “zopar piv” 🙂 Ja
+													som to na W8 ani neskusal, stale som na W7 - a dobre vediet ze s USB
+													3.0 sa to nema rado. Prilezitostne to do clanku doplnim, aj so
+													screenshotmi na instalaciu ovladaca.</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=4#respond"
+													data-commentid="4" data-postid="26"
+													data-belowelement="div-comment-4" data-respondelement="respond"
+													data-replyto="Reply to peto" aria-label="Reply to peto">Reply</a>
+											</div>
+										</article><!-- .comment-body -->
+									</li><!-- #comment-## -->
+								</ol><!-- .children -->
+							</li><!-- #comment-## -->
+							<li id="comment-5" class="comment odd alt thread-even depth-1">
+								<article id="div-comment-5" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/0105790230c1061ad6a333995501a1a5.png"
+												srcset="https://secure.gravatar.com/avatar/0105790230c1061ad6a333995501a1a5?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">Alisdair Macdonald</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-5"><time
+													datetime="2014-03-08T19:43:20+01:00">8 March 2014 at
+													19:43</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=5">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>Have you a version for 32 bit win7 java7? I tried installing with 32 bit
+											driver but does not run when started. Original Java usbscope50 software no
+											longer runs under java 7 - throws a load of uncaught exceptions.</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=5#respond"
+											data-commentid="5" data-postid="26" data-belowelement="div-comment-5"
+											data-respondelement="respond" data-replyto="Reply to Alisdair Macdonald"
+											aria-label="Reply to Alisdair Macdonald">Reply</a></div>
+								</article><!-- .comment-body -->
+							</li><!-- #comment-## -->
+							<li id="comment-6" class="comment even thread-odd thread-alt depth-1 parent">
+								<article id="div-comment-6" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/d7bc890064be120d9195a7ba6bccb071.png"
+												srcset="https://secure.gravatar.com/avatar/d7bc890064be120d9195a7ba6bccb071?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">Martin</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-6"><time
+													datetime="2014-03-12T19:57:11+01:00">12 March 2014 at
+													19:57</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=6">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>Vše jsem nainstaloval dle postupu, po spuštění mi vyhodí hlášku že nemůže
+											najít USBScope50Dvr_W32.dll , přitom ten soubor mám tam kde ho hledá, nemáte
+											nějakou radu na rozchození? Mám W7 64bit</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=6#respond"
+											data-commentid="6" data-postid="26" data-belowelement="div-comment-6"
+											data-respondelement="respond" data-replyto="Reply to Martin"
+											aria-label="Reply to Martin">Reply</a></div>
+								</article><!-- .comment-body -->
+								<ol class="children">
+									<li id="comment-7"
+										class="comment byuser comment-author-peto bypostauthor odd alt depth-2">
+										<article id="div-comment-7" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+														srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">peto</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-7"><time
+															datetime="2014-03-12T19:59:56+01:00">12 March 2014 at
+															19:59</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=7">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>Mate to urcite nakopirovane tam kde pisem (c:\Program Files\Elan
+													Digital Systems) a nie nahodou v “Program Files (x86)”? Nic ine ma
+													nenapada.</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=7#respond"
+													data-commentid="7" data-postid="26"
+													data-belowelement="div-comment-7" data-respondelement="respond"
+													data-replyto="Reply to peto" aria-label="Reply to peto">Reply</a>
+											</div>
+										</article><!-- .comment-body -->
+									</li><!-- #comment-## -->
+								</ol><!-- .children -->
+							</li><!-- #comment-## -->
+							<li id="comment-18" class="comment even thread-even depth-1 parent">
+								<article id="div-comment-18" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/e58682da09c01706f360ce34e96779d2.png"
+												srcset="https://secure.gravatar.com/avatar/e58682da09c01706f360ce34e96779d2?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">Uwe</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-18"><time
+													datetime="2014-05-30T08:56:59+02:00">30 May 2014 at 08:56</time></a>
+											<span class="edit-link"><a class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=18">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>Thank you for this Information - works well on W7Pro/64Bit-SP1<br>
+											Save me to send the USB50 to the trashcan.</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=18#respond"
+											data-commentid="18" data-postid="26" data-belowelement="div-comment-18"
+											data-respondelement="respond" data-replyto="Reply to Uwe"
+											aria-label="Reply to Uwe">Reply</a></div>
+								</article><!-- .comment-body -->
+								<ol class="children">
+									<li id="comment-19"
+										class="comment byuser comment-author-peto bypostauthor odd alt depth-2">
+										<article id="div-comment-19" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+														srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">peto</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-19"><time
+															datetime="2014-05-30T15:26:24+02:00">30 May 2014 at
+															15:26</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=19">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>I'm glad this helped you! 🙂</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=19#respond"
+													data-commentid="19" data-postid="26"
+													data-belowelement="div-comment-19" data-respondelement="respond"
+													data-replyto="Reply to peto" aria-label="Reply to peto">Reply</a>
+											</div>
+										</article><!-- .comment-body -->
+									</li><!-- #comment-## -->
+								</ol><!-- .children -->
+							</li><!-- #comment-## -->
+							<li id="comment-28" class="comment even thread-odd thread-alt depth-1 parent">
+								<article id="div-comment-28" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/63ec124e6cb9d8f4386dac2432c5f8f0.png"
+												srcset="https://secure.gravatar.com/avatar/63ec124e6cb9d8f4386dac2432c5f8f0?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">P-A. Asp</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-28"><time
+													datetime="2014-10-15T11:04:08+02:00">15 October 2014 at
+													11:04</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=28">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>“Windows will refuse to use the driver for the device, saying it's not the
+											correct device/driver combination. That's because the USB VID/PID does not
+											match any CP210x device - it is a device with a custom PID. You have to
+											force Windows to use the driver.”</p>
+										<p>How do I do that?</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=28#respond"
+											data-commentid="28" data-postid="26" data-belowelement="div-comment-28"
+											data-respondelement="respond" data-replyto="Reply to P-A. Asp"
+											aria-label="Reply to P-A. Asp">Reply</a></div>
+								</article><!-- .comment-body -->
+								<ol class="children">
+									<li id="comment-29"
+										class="comment byuser comment-author-peto bypostauthor odd alt depth-2">
+										<article id="div-comment-29" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+														srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">peto</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-29"><time
+															datetime="2014-10-15T12:26:39+02:00">15 October 2014 at
+															12:26</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=29">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>I don't have access to the device now, but I believe it should be
+													something like this:</p>
+												<ul>
+													<li>open device manager, find the device, double click it to open
+														its properties</li>
+													<li>on ‘driver' tab, click ‘update driver'</li>
+													<li>select ‘browse my computer for driver software</li>
+													<li>select ‘let me pick from…'</li>
+													<li>click ‘have disk', navigate to the driver files</li>
+													<li>uncheck ‘show compatible hardware'</li>
+												</ul>
+												<p>I think this should let you use the driver with the device. Please
+													let me know if this works for you or not.</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=29#respond"
+													data-commentid="29" data-postid="26"
+													data-belowelement="div-comment-29" data-respondelement="respond"
+													data-replyto="Reply to peto" aria-label="Reply to peto">Reply</a>
+											</div>
+										</article><!-- .comment-body -->
+									</li><!-- #comment-## -->
+								</ol><!-- .children -->
+							</li><!-- #comment-## -->
+							<li id="comment-30" class="comment even thread-even depth-1 parent">
+								<article id="div-comment-30" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/63ec124e6cb9d8f4386dac2432c5f8f0.png"
+												srcset="https://secure.gravatar.com/avatar/63ec124e6cb9d8f4386dac2432c5f8f0?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">P-A. Asp</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-30"><time
+													datetime="2014-10-15T17:49:37+02:00">15 October 2014 at
+													17:49</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=30">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>Works like a charm! You made my day! I have 2 USBscope50's that I now can
+											continue to use 🙂 Thank you!</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=30#respond"
+											data-commentid="30" data-postid="26" data-belowelement="div-comment-30"
+											data-respondelement="respond" data-replyto="Reply to P-A. Asp"
+											aria-label="Reply to P-A. Asp">Reply</a></div>
+								</article><!-- .comment-body -->
+								<ol class="children">
+									<li id="comment-31"
+										class="comment byuser comment-author-peto bypostauthor odd alt depth-2">
+										<article id="div-comment-31" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+														srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">peto</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-31"><time
+															datetime="2014-10-15T17:54:00+02:00">15 October 2014 at
+															17:54</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=31">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>Thumbs up! 🙂 I'm glad I could help.</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=31#respond"
+													data-commentid="31" data-postid="26"
+													data-belowelement="div-comment-31" data-respondelement="respond"
+													data-replyto="Reply to peto" aria-label="Reply to peto">Reply</a>
+											</div>
+										</article><!-- .comment-body -->
+									</li><!-- #comment-## -->
+								</ol><!-- .children -->
+							</li><!-- #comment-## -->
+							<li id="comment-11133" class="comment even thread-odd thread-alt depth-1 parent">
+								<article id="div-comment-11133" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/00f426c9cc4693fac2a4d7d35d368f6d.png"
+												srcset="https://secure.gravatar.com/avatar/00f426c9cc4693fac2a4d7d35d368f6d?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">Jacky Parmentier</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-11133"><time
+													datetime="2015-03-07T17:50:36+01:00">7 March 2015 at
+													17:50</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11133">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>Hello<br>
+											Thanks for all you do for the usbscope50 but I have always a bug.<br>
+											when I launch start.bat the windows Elan of the scope is coming but also
+											another windows of fatal error. With the indication :<br>
+											Usbscope50 software will terminate now.<br>
+											Unable to locate Usbscopedrvr_W32.dll<br>
+											Please insure that this file is in<br>
+											C:\program files\elan digital system\usbscope50 java software<br>
+											folder and then try running usbscope50 software again.<br>
+											Elan digital systems.<br>
+											I have to click on OK.<br>
+											I verify the file .dll is in the good place. And the driver seem OK.<br>
+											Have you an idea ?<br>
+											thanks<br>
+											Jacky</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11133#respond"
+											data-commentid="11133" data-postid="26"
+											data-belowelement="div-comment-11133" data-respondelement="respond"
+											data-replyto="Reply to Jacky Parmentier"
+											aria-label="Reply to Jacky Parmentier">Reply</a></div>
+								</article><!-- .comment-body -->
+								<ol class="children">
+									<li id="comment-11134"
+										class="comment byuser comment-author-peto bypostauthor odd alt depth-2">
+										<article id="div-comment-11134" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+														srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">peto</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-11134"><time
+															datetime="2015-03-07T19:14:44+01:00">7 March 2015 at
+															19:14</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11134">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>What operating system are you using? Is it 64bit Windows 7? Is it in
+													English or French?</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11134#respond"
+													data-commentid="11134" data-postid="26"
+													data-belowelement="div-comment-11134" data-respondelement="respond"
+													data-replyto="Reply to peto" aria-label="Reply to peto">Reply</a>
+											</div>
+										</article><!-- .comment-body -->
+									</li><!-- #comment-## -->
+									<li id="comment-11175" class="comment even depth-2 parent">
+										<article id="div-comment-11175" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/30d8217d2c921f7af49e7992dc2b5e1b.png"
+														srcset="https://secure.gravatar.com/avatar/30d8217d2c921f7af49e7992dc2b5e1b?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">Peter Mc Shane</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-11175"><time
+															datetime="2015-07-28T13:51:22+02:00">28 July 2015 at
+															13:51</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11175">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>The files should be in the folder “C:\Program files\Elan Digital
+													Systems\USBScope50 Java Software” and not “C:\Program files\Elan
+													Digital Systems”. I made that mistake but when I checked on my old
+													XP Laptop I saw the correct folder layout.</p>
+												<p>Thanks for this Peto, I missed not being able to use the USBScope!
+												</p>
+												<p>Peter</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11175#respond"
+													data-commentid="11175" data-postid="26"
+													data-belowelement="div-comment-11175" data-respondelement="respond"
+													data-replyto="Reply to Peter Mc Shane"
+													aria-label="Reply to Peter Mc Shane">Reply</a></div>
+										</article><!-- .comment-body -->
+										<ol class="children">
+											<li id="comment-11176"
+												class="comment byuser comment-author-peto bypostauthor odd alt depth-3">
+												<article id="div-comment-11176" class="comment-body">
+													<footer class="comment-meta">
+														<div class="comment-author vcard">
+															<img alt=""
+																src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+																srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+																class="avatar avatar-34 photo" height="34" width="34"
+																loading="lazy"> <b class="fn">peto</b> <span
+																class="says">says:</span>
+														</div><!-- .comment-author -->
+
+														<div class="comment-metadata">
+															<a href="./index.html#comment-11176"><time
+																	datetime="2015-07-28T13:53:47+02:00">28 July 2015 at
+																	13:53</time></a> <span class="edit-link"><a
+																	class="comment-edit-link"
+																	href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11176">Edit</a></span>
+														</div><!-- .comment-metadata -->
+
+													</footer><!-- .comment-meta -->
+
+													<div class="comment-content">
+														<p>The zip file contains the “USBScope50 Java Software” folder,
+															so the wording is actually correct 😉 Anyways, I'm glad I
+															helped one more person to revive the nice device.<br>
+															Peter</p>
+													</div><!-- .comment-content -->
+
+													<div class="reply"><a rel="nofollow" class="comment-reply-link"
+															href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11176#respond"
+															data-commentid="11176" data-postid="26"
+															data-belowelement="div-comment-11176"
+															data-respondelement="respond" data-replyto="Reply to peto"
+															aria-label="Reply to peto">Reply</a></div>
+												</article><!-- .comment-body -->
+											</li><!-- #comment-## -->
+										</ol><!-- .children -->
+									</li><!-- #comment-## -->
+								</ol><!-- .children -->
+							</li><!-- #comment-## -->
+							<li id="comment-11246" class="comment even thread-even depth-1 parent">
+								<article id="div-comment-11246" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/74289de9236ee3bb930d6d2142b9e4ed.png"
+												srcset="https://secure.gravatar.com/avatar/74289de9236ee3bb930d6d2142b9e4ed?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">Riyad</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-11246"><time
+													datetime="2015-10-04T16:27:08+02:00">4 October 2015 at
+													16:27</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11246">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>Thanks for reviving my USBscope50 - working on windows 10. </p>
+										<p>I was about to buy to buy a BitScope Micro Oscilloscope &amp; Analyzer - what
+											do you think of this scope compared to the USBscope50? (The USBscope50 is
+											many years old now, how does it compare with newer similar scopes.)</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11246#respond"
+											data-commentid="11246" data-postid="26"
+											data-belowelement="div-comment-11246" data-respondelement="respond"
+											data-replyto="Reply to Riyad" aria-label="Reply to Riyad">Reply</a></div>
+								</article><!-- .comment-body -->
+								<ol class="children">
+									<li id="comment-11247"
+										class="comment byuser comment-author-peto bypostauthor odd alt depth-2">
+										<article id="div-comment-11247" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+														srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">peto</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-11247"><time
+															datetime="2015-10-04T16:39:01+02:00">4 October 2015 at
+															16:39</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11247">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>Hi Riyad, I'm glad I could help - and thanks for the donation :),
+													much appreciated.<br>
+													I had a quick look at the bitscope gadget, it does have some extra
+													features (2ch, logic analyzer) but also seems to have lower speed
+													(20MHz vs 75MHz). It depends what your needs are - in any case I
+													wouldn't say USBscope50 is obsolete, despite its age. It still does
+													its job and it does it well.</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11247#respond"
+													data-commentid="11247" data-postid="26"
+													data-belowelement="div-comment-11247" data-respondelement="respond"
+													data-replyto="Reply to peto" aria-label="Reply to peto">Reply</a>
+											</div>
+										</article><!-- .comment-body -->
+									</li><!-- #comment-## -->
+								</ol><!-- .children -->
+							</li><!-- #comment-## -->
+							<li id="comment-11302" class="comment even thread-odd thread-alt depth-1">
+								<article id="div-comment-11302" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/2240b1296130016d1a0550baa01f1196.png"
+												srcset="https://secure.gravatar.com/avatar/2240b1296130016d1a0550baa01f1196?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">cng</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-11302"><time
+													datetime="2015-11-25T09:33:36+01:00">25 November 2015 at
+													09:33</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11302">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>win 7 x64 funkcni/working …got one issue(my fault) 🙂 - copy whole directory
+											“USBscope50 Java Software” to c:\Program Files\Elan Digital Systems\ to
+											avoid DLL file missing</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11302#respond"
+											data-commentid="11302" data-postid="26"
+											data-belowelement="div-comment-11302" data-respondelement="respond"
+											data-replyto="Reply to cng" aria-label="Reply to cng">Reply</a></div>
+								</article><!-- .comment-body -->
+							</li><!-- #comment-## -->
+							<li id="comment-11306" class="comment odd alt thread-even depth-1 parent">
+								<article id="div-comment-11306" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/884a120f6a460216226d846ee3628b72.png"
+												srcset="https://secure.gravatar.com/avatar/884a120f6a460216226d846ee3628b72?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn"><a href="http://microlite.ie/" rel="external nofollow ugc"
+													class="url">Michael</a></b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-11306"><time
+													datetime="2016-04-18T15:02:48+02:00">18 April 2016 at
+													15:02</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11306">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>Thanks for making this available. I had thought my USBscope50 was dead in the
+											water. I can testify that your solution works with Win 8.1. And as proof of
+											my gratitude I have made a small beer sized donation!</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11306#respond"
+											data-commentid="11306" data-postid="26"
+											data-belowelement="div-comment-11306" data-respondelement="respond"
+											data-replyto="Reply to Michael" aria-label="Reply to Michael">Reply</a>
+									</div>
+								</article><!-- .comment-body -->
+								<ol class="children">
+									<li id="comment-11307"
+										class="comment byuser comment-author-peto bypostauthor even depth-2">
+										<article id="div-comment-11307" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+														srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">peto</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-11307"><time
+															datetime="2016-04-18T15:04:30+02:00">18 April 2016 at
+															15:04</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11307">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>I'm glad it's working well for you 🙂 it's a nice and valuable
+													device, only needs decent software. Many thanks for the donation,
+													much appreciated 🙂</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11307#respond"
+													data-commentid="11307" data-postid="26"
+													data-belowelement="div-comment-11307" data-respondelement="respond"
+													data-replyto="Reply to peto" aria-label="Reply to peto">Reply</a>
+											</div>
+										</article><!-- .comment-body -->
+									</li><!-- #comment-## -->
+								</ol><!-- .children -->
+							</li><!-- #comment-## -->
+							<li id="comment-11334" class="comment odd alt thread-odd thread-alt depth-1">
+								<article id="div-comment-11334" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/5978e51eb249f1c5f8e47e143aabb460.png"
+												srcset="https://secure.gravatar.com/avatar/5978e51eb249f1c5f8e47e143aabb460?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">Andrej Jarosevic</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-11334"><time
+													datetime="2016-07-29T08:57:52+02:00">29 July 2016 at
+													08:57</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11334">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>It works even with W10 64 bit.<br>
+											Important<br>
+											C:\Program Files\Elan Digital Systems\USBscope50 Java Software<br>
+											Not Program Files (x86)!!!</p>
+										<p>Download from silabs.com CP210x_Windows_Driver (W10)and run
+											CP210xVCPInstaller_x64.exe.<br>
+											Connect the USBscope50 to PC. (tested with USB SS and USB3 ports). </p>
+										<p>Go to device manager and find the USBscope50 (probably in Portable Devices,
+											no compatible driver…).<br>
+											Update driver (find manufacturer Silicon Labs and driver CP210x USB to UART
+											Bridge) and confirm. IGNORE the warning (your responsibility) and click
+											YES.<br>
+											In the device manager you will find the USBscope50 in COM and LPT ports as
+											Silicon Labs CP210x USB to UART Bridge (COM …).</p>
+										<p>Run the start.bat and enjoy.</p>
+										<p>WARNING Do not connect the USBscope50 to different USB port during session.
+										</p>
+										<p>Andrej Jarosevic</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11334#respond"
+											data-commentid="11334" data-postid="26"
+											data-belowelement="div-comment-11334" data-respondelement="respond"
+											data-replyto="Reply to Andrej Jarosevic"
+											aria-label="Reply to Andrej Jarosevic">Reply</a></div>
+								</article><!-- .comment-body -->
+							</li><!-- #comment-## -->
+							<li id="comment-11422" class="comment even thread-even depth-1 parent">
+								<article id="div-comment-11422" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/ab947c86fe400aa9268131efc88052bb.png"
+												srcset="https://secure.gravatar.com/avatar/ab947c86fe400aa9268131efc88052bb?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">Brian Burlew</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-11422"><time
+													datetime="2017-06-10T06:03:49+02:00">10 June 2017 at
+													06:03</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11422">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>I've loaded your Win7 update, including the driver and was informed that the
+											device was working correctly. What I can't get is the software to open
+											without a Fatal error that it's unable to locate the USBscope50Drvr_W32.dll.
+											That file is in the Java Software folder - but it's still asking that I need
+											to insure that the .dll is in the folder. What is the next step?</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11422#respond"
+											data-commentid="11422" data-postid="26"
+											data-belowelement="div-comment-11422" data-respondelement="respond"
+											data-replyto="Reply to Brian Burlew"
+											aria-label="Reply to Brian Burlew">Reply</a></div>
+								</article><!-- .comment-body -->
+								<ol class="children">
+									<li id="comment-11423" class="comment odd alt depth-2 parent">
+										<article id="div-comment-11423" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/ab947c86fe400aa9268131efc88052bb.png"
+														srcset="https://secure.gravatar.com/avatar/ab947c86fe400aa9268131efc88052bb?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">Brian Burlew</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-11423"><time
+															datetime="2017-06-10T06:08:28+02:00">10 June 2017 at
+															06:08</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11423">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>Ok, disregard that last comment. I corrected the issue. Much
+													appreciated that you have provided this update.</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11423#respond"
+													data-commentid="11423" data-postid="26"
+													data-belowelement="div-comment-11423" data-respondelement="respond"
+													data-replyto="Reply to Brian Burlew"
+													aria-label="Reply to Brian Burlew">Reply</a></div>
+										</article><!-- .comment-body -->
+										<ol class="children">
+											<li id="comment-11424"
+												class="comment byuser comment-author-peto bypostauthor even depth-3">
+												<article id="div-comment-11424" class="comment-body">
+													<footer class="comment-meta">
+														<div class="comment-author vcard">
+															<img alt=""
+																src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+																srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+																class="avatar avatar-34 photo" height="34" width="34"
+																loading="lazy"> <b class="fn">peto</b> <span
+																class="says">says:</span>
+														</div><!-- .comment-author -->
+
+														<div class="comment-metadata">
+															<a href="./index.html#comment-11424"><time
+																	datetime="2017-06-10T07:24:59+02:00">10 June 2017 at
+																	07:24</time></a> <span class="edit-link"><a
+																	class="comment-edit-link"
+																	href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11424">Edit</a></span>
+														</div><!-- .comment-metadata -->
+
+													</footer><!-- .comment-meta -->
+
+													<div class="comment-content">
+														<p>Glad it worked after all. What was the problem?</p>
+													</div><!-- .comment-content -->
+
+													<div class="reply"><a rel="nofollow" class="comment-reply-link"
+															href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11424#respond"
+															data-commentid="11424" data-postid="26"
+															data-belowelement="div-comment-11424"
+															data-respondelement="respond" data-replyto="Reply to peto"
+															aria-label="Reply to peto">Reply</a></div>
+												</article><!-- .comment-body -->
+											</li><!-- #comment-## -->
+										</ol><!-- .children -->
+									</li><!-- #comment-## -->
+								</ol><!-- .children -->
+							</li><!-- #comment-## -->
+							<li id="comment-11544" class="comment odd alt thread-odd thread-alt depth-1 parent">
+								<article id="div-comment-11544" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/d74fd06aefa40c8845339967a8caa4c6.png"
+												srcset="https://secure.gravatar.com/avatar/d74fd06aefa40c8845339967a8caa4c6?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">István Széll</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-11544"><time
+													datetime="2018-05-25T00:07:34+02:00">25 May 2018 at 00:07</time></a>
+											<span class="edit-link"><a class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11544">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>Hi Peter,</p>
+										<p>I also have a USBscope50 and you did an excellent job.<br>
+											Do you still have the source code?<br>
+											Do you think it would be possible to make it work on Android?</p>
+										<p>Best Regards István.</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11544#respond"
+											data-commentid="11544" data-postid="26"
+											data-belowelement="div-comment-11544" data-respondelement="respond"
+											data-replyto="Reply to István Széll"
+											aria-label="Reply to István Széll">Reply</a></div>
+								</article><!-- .comment-body -->
+								<ol class="children">
+									<li id="comment-11545"
+										class="comment byuser comment-author-peto bypostauthor even depth-2 parent">
+										<article id="div-comment-11545" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+														srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">peto</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-11545"><time
+															datetime="2018-05-25T08:12:10+02:00">25 May 2018 at
+															08:12</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11545">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>Hi Istvan - I could probably still find the sources somewhere. A lot
+													of the code is specific for desktop OS (i.e. the GUI) so porting to
+													android would need a *lot* of work. If you're up to it, I can upload
+													the sources for you somewhere.</p>
+												<p>Peter</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11545#respond"
+													data-commentid="11545" data-postid="26"
+													data-belowelement="div-comment-11545" data-respondelement="respond"
+													data-replyto="Reply to peto" aria-label="Reply to peto">Reply</a>
+											</div>
+										</article><!-- .comment-body -->
+										<ol class="children">
+											<li id="comment-11596" class="comment odd alt depth-3 parent">
+												<article id="div-comment-11596" class="comment-body">
+													<footer class="comment-meta">
+														<div class="comment-author vcard">
+															<img alt=""
+																src="./files/fd3905e93be8c3899957c8a3b593cb34.png"
+																srcset="https://secure.gravatar.com/avatar/fd3905e93be8c3899957c8a3b593cb34?s=68&amp;d=mm&amp;r=g 2x"
+																class="avatar avatar-34 photo" height="34" width="34"
+																loading="lazy"> <b class="fn">Lukas</b> <span
+																class="says">says:</span>
+														</div><!-- .comment-author -->
+
+														<div class="comment-metadata">
+															<a href="./index.html#comment-11596"><time
+																	datetime="2018-12-02T21:54:16+01:00">2 December 2018
+																	at 21:54</time></a> <span class="edit-link"><a
+																	class="comment-edit-link"
+																	href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=11596">Edit</a></span>
+														</div><!-- .comment-metadata -->
+
+													</footer><!-- .comment-meta -->
+
+													<div class="comment-content">
+														<p>Hi Peter,</p>
+														<p>Thank you for your great work!<br>
+															My old nice small scope is resurrected back to life!<br>
+															Am interested in source codes of your modification too…
+															would you be so kind to search for and upload anywhere
+															please?<br>
+															I would like to study the code and to correct some minor
+															glitches which are remaining there.</p>
+														<p>Thank you, Lukas</p>
+													</div><!-- .comment-content -->
+
+													<div class="reply"><a rel="nofollow" class="comment-reply-link"
+															href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=11596#respond"
+															data-commentid="11596" data-postid="26"
+															data-belowelement="div-comment-11596"
+															data-respondelement="respond" data-replyto="Reply to Lukas"
+															aria-label="Reply to Lukas">Reply</a></div>
+												</article><!-- .comment-body -->
+												<ol class="children">
+													<li id="comment-12317"
+														class="comment byuser comment-author-peto bypostauthor even depth-4">
+														<article id="div-comment-12317" class="comment-body">
+															<footer class="comment-meta">
+																<div class="comment-author vcard">
+																	<img alt=""
+																		src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+																		srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+																		class="avatar avatar-34 photo" height="34"
+																		width="34" loading="lazy"> <b
+																		class="fn">peto</b> <span
+																		class="says">says:</span>
+																</div><!-- .comment-author -->
+
+																<div class="comment-metadata">
+																	<a href="./index.html#comment-12317"><time
+																			datetime="2019-03-21T17:32:31+01:00">21
+																			March 2019 at 17:32</time></a> <span
+																		class="edit-link"><a class="comment-edit-link"
+																			href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=12317">Edit</a></span>
+																</div><!-- .comment-metadata -->
+
+															</footer><!-- .comment-meta -->
+
+															<div class="comment-content">
+																<p>Hi Lukas,<br>
+																	sorry for long silence from me, my WP e-mail
+																	notifications weren't working and I only now found
+																	your comment. I will upload the sources
+																	somewhere.<br>
+																	Peter</p>
+															</div><!-- .comment-content -->
+
+															<div class="reply"><a rel="nofollow"
+																	class="comment-reply-link"
+																	href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=12317#respond"
+																	data-commentid="12317" data-postid="26"
+																	data-belowelement="div-comment-12317"
+																	data-respondelement="respond"
+																	data-replyto="Reply to peto"
+																	aria-label="Reply to peto">Reply</a></div>
+														</article><!-- .comment-body -->
+													</li><!-- #comment-## -->
+												</ol><!-- .children -->
+											</li><!-- #comment-## -->
+										</ol><!-- .children -->
+									</li><!-- #comment-## -->
+								</ol><!-- .children -->
+							</li><!-- #comment-## -->
+							<li id="comment-12281" class="comment odd alt thread-even depth-1 parent">
+								<article id="div-comment-12281" class="comment-body">
+									<footer class="comment-meta">
+										<div class="comment-author vcard">
+											<img alt="" src="./files/be7ec4eed40f4a0457fc97a6dc7ecd39.png"
+												srcset="https://secure.gravatar.com/avatar/be7ec4eed40f4a0457fc97a6dc7ecd39?s=68&amp;d=mm&amp;r=g 2x"
+												class="avatar avatar-34 photo" height="34" width="34" loading="lazy"> <b
+												class="fn">Petr H.</b> <span class="says">says:</span>
+										</div><!-- .comment-author -->
+
+										<div class="comment-metadata">
+											<a href="./index.html#comment-12281"><time
+													datetime="2019-03-17T18:55:06+01:00">17 March 2019 at
+													18:55</time></a> <span class="edit-link"><a
+													class="comment-edit-link"
+													href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=12281">Edit</a></span>
+										</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+									<div class="comment-content">
+										<p>Hi everyone,<br>
+											It is possible to modify VID/PID of the scope and let Windows install
+											generic SiLabs driver automatically.<br>
+											1/ Force install the driver as described in the article (needed only once
+											for programming)<br>
+											2/ Download SiLabs legacy utilities<br>
+											<a href="https://www.silabs.com/community/interface/knowledge-base.entry.html/2016/11/04/cp210x_legacy_progra-zARf"
+												rel="nofollow ugc">https://www.silabs.com/community/interface/knowledge-base.entry.html/2016/11/04/cp210x_legacy_progra-zARf</a><br>
+											3/ Run CP210xSetIDs.exe as administrator<br>
+											4/ Make sure you have selected correct device<br>
+											5/ Check checkbox next to “Pid” (do not check any other checkboxes or change
+											any other default values)<br>
+											6/ Enter new Pid value: EA60 (old value is F001)<br>
+											7/ Click Program Device button<br>
+											8/ Close program, unplug and re-plug the scope<br>
+											9/ Let Windows install default SiLabs driver (installs automatically)<br>
+											Now Windows will recognize the USB Scope 50 as generic USB SiLabs COM port,
+											so there is no need to force install the driver in the future. Scope will
+											now work in any USB port on any computer (Windows 7 and above) with default
+											SiLabs Windows driver.
+										</p>
+									</div><!-- .comment-content -->
+
+									<div class="reply"><a rel="nofollow" class="comment-reply-link"
+											href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=12281#respond"
+											data-commentid="12281" data-postid="26"
+											data-belowelement="div-comment-12281" data-respondelement="respond"
+											data-replyto="Reply to Petr H." aria-label="Reply to Petr H.">Reply</a>
+									</div>
+								</article><!-- .comment-body -->
+								<ol class="children">
+									<li id="comment-12325"
+										class="comment byuser comment-author-peto bypostauthor even depth-2">
+										<article id="div-comment-12325" class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="" src="./files/4609e4de1845aa96124ab80853b6f9c3(2).png"
+														srcset="https://secure.gravatar.com/avatar/4609e4de1845aa96124ab80853b6f9c3?s=68&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-34 photo" height="34" width="34"
+														loading="lazy"> <b class="fn">peto</b> <span
+														class="says">says:</span>
+												</div><!-- .comment-author -->
+
+												<div class="comment-metadata">
+													<a href="./index.html#comment-12325"><time
+															datetime="2019-03-22T22:03:04+01:00">22 March 2019 at
+															22:03</time></a> <span class="edit-link"><a
+															class="comment-edit-link"
+															href="https://peto.halicky.sk/wp-admin/comment.php?action=editcomment&amp;c=12325">Edit</a></span>
+												</div><!-- .comment-metadata -->
+
+											</footer><!-- .comment-meta -->
+
+											<div class="comment-content">
+												<p>This is great, no more need to fool around with forcing driver
+													install. I just did it on mine, it worked like a charm!</p>
+											</div><!-- .comment-content -->
+
+											<div class="reply"><a rel="nofollow" class="comment-reply-link"
+													href="https://peto.halicky.sk/usbscope-on-windows-7-64bit-and-java-7/?replytocom=12325#respond"
+													data-commentid="12325" data-postid="26"
+													data-belowelement="div-comment-12325" data-respondelement="respond"
+													data-replyto="Reply to peto" aria-label="Reply to peto">Reply</a>
+											</div>
+										</article><!-- .comment-body -->
+									</li><!-- #comment-## -->
+								</ol><!-- .children -->
+							</li><!-- #comment-## -->
+						</ol><!-- .comment-list -->
+
+						<div id="respond" class="comment-respond">
+							<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow"
+										id="cancel-comment-reply-link" href="./index.html#respond"
+										style="display:none;">Cancel reply</a></small></h3>
+							<form action="https://peto.halicky.sk/wp-comments-post.php" method="post" id="commentform"
+								class="comment-form" novalidate="">
+								<p class="logged-in-as"><a href="https://peto.halicky.sk/wp-admin/profile.php"
+										aria-label="Logged in as peto. Edit your profile.">Logged in as peto</a>. <a
+										href="https://peto.halicky.sk/wp-login.php?action=logout&amp;redirect_to=https%3A%2F%2Fpeto.halicky.sk%2Fusbscope-on-windows-7-64bit-and-java-7%2F&amp;_wpnonce=2f4abc2415">Log
+										out?</a></p>
+								<p class="comment-form-comment"><label for="comment">Comment</label> <textarea
+										id="comment" name="comment" cols="45" rows="8" maxlength="65525"
+										required="required"></textarea></p>
+								<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit"
+										value="Post Comment"> <input type="hidden" name="comment_post_ID" value="26"
+										id="comment_post_ID">
+									<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+								</p>
+								<p style="display: none;"><input type="hidden" id="akismet_comment_nonce"
+										name="akismet_comment_nonce" value="5760648398"></p><input type="hidden"
+									id="_wp_unfiltered_html_comment_disabled" name="_wp_unfiltered_html_comment"
+									value="c6ed4169b5">
+								<script>(function () { if (window === window.parent) { document.getElementById('_wp_unfiltered_html_comment_disabled').name = '_wp_unfiltered_html_comment'; } })();</script>
+								<p style="display: none !important;"><label>Δ<textarea name="ak_hp_textarea" cols="45"
+											rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js"
+										name="ak_js" value="1640549383190">
+									<script>document.getElementById("ak_js").setAttribute("value", (new Date()).getTime());</script>
+								</p>
+							</form>
+						</div><!-- #respond -->
+
+					</div><!-- #comments -->
+				</div><!-- #content -->
+			</div><!-- #primary -->
+
+		</div><!-- #main -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+
+
+			<div class="site-info">
+				<a href="https://wordpress.org/" class="imprint">
+					Proudly powered by WordPress </a>
+			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+	<script src="./files/hoverintent-js.min.js.download" id="hoverintent-js-js"></script>
+	<script src="./files/admin-bar.min.js.download" id="admin-bar-js"></script>
+	<script src="./files/comment-reply.min.js.download" id="comment-reply-js"></script>
+	<script src="./files/functions.js.download" id="twentyfourteen-script-js"></script>
+	<script src="./files/wp-embed.min.js.download" id="wp-embed-js"></script>
+
+
+	<div id="wfboxOverlay" style="display: none;"></div>
+	<div id="wordfenceBox" class="" role="dialog" tabindex="-1" style="display: none;">
+		<div id="wfboxWrapper">
+			<div>
+				<div id="wfboxTopLeft" style="float: left;"></div>
+				<div id="wfboxTopCenter" style="float: left;"></div>
+				<div id="wfboxTopRight" style="float: left;"></div>
+			</div>
+			<div style="clear: left;">
+				<div id="wfboxMiddleLeft" style="float: left;"></div>
+				<div id="wfboxContent" style="float: left;">
+					<div id="wfboxTitle" style="float: left;"></div>
+					<div id="wfboxCurrent" style="float: left;"></div>
+					<div id="wfboxLoadingOverlay" style="float: left;"></div>
+					<div id="wfboxLoadingGraphic" style="float: left;"></div>
+				</div>
+				<div id="wfboxMiddleRight" style="float: left;"></div>
+			</div>
+			<div style="clear: left;">
+				<div id="wfboxBottomLeft" style="float: left;"></div>
+				<div id="wfboxBottomCenter" style="float: left;"></div>
+				<div id="wfboxBottomRight" style="float: left;"></div>
+			</div>
+		</div>
+		<div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
+	</div>
+</body>
+
+</html>
